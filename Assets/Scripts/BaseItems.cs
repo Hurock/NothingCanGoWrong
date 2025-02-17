@@ -53,6 +53,7 @@ public class BaseItems : MonoBehaviour, IInteractable
                 characterMovement.enabled = false;
                 Cursor.lockState = CursorLockMode.None;
                 PuzzleCamera.enabled = true;
+                FindObjectOfType<PlayerInputs>().IsPlayerInsidePuzzle = true;
                 // Show Puzzle UI - Saira
             }
             
@@ -64,6 +65,7 @@ public class BaseItems : MonoBehaviour, IInteractable
     {
         if (isCameraChanging)
         {
+            FindObjectOfType<PlayerInputs>().IsPlayerInsidePuzzle = false;
             characterMovement.enabled = true;
             Cursor.lockState = CursorLockMode.Locked;
             PuzzleCamera.enabled = false;
