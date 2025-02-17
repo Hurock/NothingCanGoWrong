@@ -2,6 +2,7 @@ using Cinemachine;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.IO.LowLevel.Unsafe;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class BaseItems : MonoBehaviour, IInteractable
@@ -12,11 +13,13 @@ public class BaseItems : MonoBehaviour, IInteractable
 
     CinemachineVirtualCamera PuzzleCamera;
 
+    private PlayerMovement characterMovement;
+
     // Start is called before the first frame update
     void Start()
     {
         canvas = GetComponentInChildren<Canvas>();
-
+        characterMovement = FindObjectOfType<PlayerMovement>();
         if (PuzzleCamera = GetComponentInChildren<CinemachineVirtualCamera>())
         {
             isCameraChanging = true;
@@ -47,7 +50,11 @@ public class BaseItems : MonoBehaviour, IInteractable
         {
             if (isCameraChanging) 
             {
+                characterMovement.enabled = false;
+                Cursor.lockState = CursorLockMode.None;
                 PuzzleCamera.enabled = true;
+                FindObjectOfType<PlayerInputs>().IsPlayerInsidePuzzle = true;
+                // Show Puzzle UI - Saira
             }
             
             Debug.Log("Interacting with a puzzle");
@@ -56,6 +63,13 @@ public class BaseItems : MonoBehaviour, IInteractable
 
     public void OnInteractEnd()
     {
-        PuzzleCamera.enabled = false;
+        if (isCameraChanging)
+        {
+            FindObjectOfType<PlayerInputs>().IsPlayerInsidePuzzle = false;
+            characterMovement.enabled = true;
+            Cursor.lockState = CursorLockMode.Locked;
+            PuzzleCamera.enabled = false;
+            // Disable Puzzle UI - Saira
+        }
     }
 }
