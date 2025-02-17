@@ -38,8 +38,5 @@ public class PlayerMovement : MonoBehaviour
         {
             animator.SetBool("IsWalking", false);
         }
-        
-
-        
     }
 }
