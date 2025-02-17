@@ -4,7 +4,8 @@ using UnityEngine;
 
 public interface IInteractable
 {
-    public void InteractBegin();
-    public void InteractEnd();
-    public void OnInteract();
+    public void OnHoverBegin();
+    public void OnHoverEnd();
+    public void OnInteractBegin();
+    public void OnInteractEnd();
 }

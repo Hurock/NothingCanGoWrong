@@ -37,7 +37,6 @@ public class RayCaster : MonoBehaviour
         {
             Debug.DrawRay(cameraTransform.position, cameraTransform.TransformDirection(Vector3.forward) * hit.distance, Color.yellow);
             //Debug.Log("Hit: " + hit.transform.gameObject.name);
-            hit.transform.SendMessage("InteractBegin");
 
         }
         else
@@ -69,7 +68,7 @@ public class RayCaster : MonoBehaviour
                     var temp = previous.gameObject.GetComponent<BaseItems>() as IInteractable;
                     if (temp != null)
                     {
-                        temp.InteractEnd();
+                        temp.OnHoverEnd();
                     }
                 }
             }
@@ -83,7 +82,7 @@ public class RayCaster : MonoBehaviour
                 var temp = previous.gameObject.GetComponent<BaseItems>() as IInteractable;
                 if (temp != null)
                 {
-                    temp.OnInteract();
+                    temp.OnInteractBegin();
                 }
             }
         }
@@ -96,7 +95,7 @@ public class RayCaster : MonoBehaviour
                 var temp = previous.gameObject.GetComponent<BaseItems>() as IInteractable;
                 if (temp != null)
                 {
-                    temp.InteractEnd();
+                    temp.OnHoverEnd();
                 }
             }
 
@@ -105,7 +104,7 @@ public class RayCaster : MonoBehaviour
                 var temp = current.gameObject.GetComponent<BaseItems>() as IInteractable;
                 if (temp != null)
                 {
-                    temp.InteractBegin();
+                    temp.OnHoverBegin();
                 }
             }
         }
@@ -118,7 +117,7 @@ public class RayCaster : MonoBehaviour
                 var temp = current.gameObject.GetComponent<BaseItems>() as IInteractable;
                 if (temp != null)
                 {
-                    temp.InteractBegin();
+                    temp.OnHoverBegin();
                 }
             }
         }
