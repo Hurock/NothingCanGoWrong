@@ -1,29 +1,39 @@
+using Cinemachine;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.IO.LowLevel.Unsafe;
 using UnityEngine;
 
 public class BaseItems : MonoBehaviour, IInteractable
 {
     Canvas canvas;
 
+    [SerializeField] bool isCameraChanging;
+
+    CinemachineVirtualCamera PuzzleCamera;
+
     // Start is called before the first frame update
     void Start()
     {
         canvas = GetComponentInChildren<Canvas>();
 
+        if (PuzzleCamera = GetComponentInChildren<CinemachineVirtualCamera>())
+        {
+            isCameraChanging = true;
+        }
     }
 
-    public void InteractEnd()
+    public void OnHoverEnd()
     {
         canvas.enabled = false;
     }
 
-    public void InteractBegin()
+    public void OnHoverBegin()
     {
         canvas.enabled = true;
     }
 
-    public void OnInteract()
+    public void OnInteractBegin()
     {
         if (gameObject.tag == "KeyItem")
         {
@@ -35,18 +45,17 @@ public class BaseItems : MonoBehaviour, IInteractable
         }
         else if (gameObject.tag == "Puzzle")
         {
+            if (isCameraChanging) 
+            {
+                PuzzleCamera.enabled = true;
+            }
+            
             Debug.Log("Interacting with a puzzle");
         }
     }
 
-    private void OnCollisionEnter(Collision collision)
+    public void OnInteractEnd()
     {
-        
-        canvas.enabled = true;
-    }
-
-    private void OnCollisionExit(Collision collision)
-    {
-        canvas.enabled = false;
+        PuzzleCamera.enabled = false;
     }
 }
