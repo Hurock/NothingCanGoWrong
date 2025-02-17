@@ -29,8 +29,9 @@ public class BaseItems : MonoBehaviour, IInteractable
         {
             Debug.Log("Picking key item up");
 
-            //Pickup item
-            //Destroy item
+            PlayerInventory playerInventory = FindObjectOfType<PlayerInventory>();
+            playerInventory.AddKeyItem(gameObject.name);
+            Destroy(gameObject);
         }
         else if (gameObject.tag == "Puzzle")
         {
