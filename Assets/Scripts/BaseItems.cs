@@ -40,7 +40,7 @@ public class BaseItems : MonoBehaviour, IInteractable
     {
         if (gameObject.tag == "KeyItem")
         {
-            Debug.Log("Picking key item up");
+            //Debug.Log("Picking key item up");
 
             PlayerInventory playerInventory = FindObjectOfType<PlayerInventory>();
             playerInventory.AddKeyItem(gameObject.name);
@@ -48,7 +48,7 @@ public class BaseItems : MonoBehaviour, IInteractable
         }
         else if (gameObject.tag == "Puzzle")
         {
-            if (isCameraChanging) 
+            if (isCameraChanging)
             {
                 characterMovement.enabled = false;
                 Cursor.lockState = CursorLockMode.None;
@@ -56,8 +56,8 @@ public class BaseItems : MonoBehaviour, IInteractable
                 FindObjectOfType<PlayerInputs>().IsPlayerInsidePuzzle = true;
                 // Show Puzzle UI - Saira
             }
-            
-            Debug.Log("Interacting with a puzzle");
+
+            //Debug.Log("Interacting with a puzzle");
         }
     }
 
@@ -71,5 +71,10 @@ public class BaseItems : MonoBehaviour, IInteractable
             PuzzleCamera.enabled = false;
             // Disable Puzzle UI - Saira
         }
+    }
+
+    public virtual void DisableCanvas()
+    {
+        canvas.enabled = false;
     }
 }

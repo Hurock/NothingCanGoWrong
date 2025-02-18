@@ -4,17 +4,65 @@ using UnityEngine;
 
 public class Tentacle : BaseItems
 {
-    private int tentacleID = 0;
+    static int tentacleID = 0;
 
-    // Start is called before the first frame update
-    void Start()
+    public bool isInteractable = false;
+
+    private KrakenPuzzleManager krakenPuzzleManager;
+
+    private Animator anim;
+
+    public override void Start()
     {
-        
+        base.Start();
+        tentacleID++;
+
+        Debug.Log(tentacleID);
+
+        anim = GetComponent<Animator>();
+        krakenPuzzleManager = FindObjectOfType<KrakenPuzzleManager>();
     }
 
-    // Update is called once per frame
-    void Update()
+    public override void OnHoverBegin()
     {
-        
+        if (isInteractable)
+        {
+            base.OnHoverBegin();
+        }
     }
+    public override void OnHoverEnd()
+    {
+        if (isInteractable)
+        {
+            base.OnHoverEnd();
+        }
+    }
+    public override void OnInteractBegin()
+    {
+        if (isInteractable)
+        {
+            base.OnInteractBegin();
+            CurlTentacle();
+            krakenPuzzleManager.AddToPassword(tentacleID.ToString());
+        }
+    }
+    public override void OnInteractEnd()
+    {
+        if (isInteractable)
+        {
+            base.OnInteractEnd();
+        }
+    }
+
+    public void CurlTentacle()
+    {
+        anim.SetBool("IsSelected", true);
+    }
+
+    public void UncurlTentacle()
+    {
+        anim.SetBool("IsSelected", false);
+    }
+    
+    
 }

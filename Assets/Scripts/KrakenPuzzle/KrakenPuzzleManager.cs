@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -11,32 +12,46 @@ public class KrakenPuzzleManager : BaseItems
 
     private PlayerInventory playerInventory;
 
+    private string puzzlePassword = "1234";
+
+    [SerializeField] private string currentPassword = "";
+
+    private bool isInteractable = true;
+
     public override void Start()
     {
         base.Start();
         playerInventory = FindObjectOfType<PlayerInventory>();
     }
 
-    
-    void Update()
-    {
-        
-    }
-
     public override void OnInteractBegin()
     {
-        base.OnInteractBegin();
-        
-        if (playerInventory != null)
+        if (isInteractable)
         {
-            List<string> temp = playerInventory.GetKeyItems();
-            for (int i = 0; i < temp.Count; i++)
+            base.OnInteractBegin();
+
+            if (playerInventory != null)
             {
-                if(temp[i] == "Tentacle")
+                List<string> temp = playerInventory.GetKeyItems();
+                for (int i = 0; i < temp.Count; i++)
                 {
-                    playerInventory.RemoveKeyItem(i);
-                    Instantiate(tentaclePrefab, tentacleSockets[0]);
-                    tentacleSockets.RemoveAt(0);
+                    if (temp[i] == "Tentacle")
+                    {
+                        playerInventory.RemoveKeyItem(i);
+                        tentacles.Add(Instantiate(tentaclePrefab, tentacleSockets[0]));
+                        tentacleSockets.RemoveAt(0);
+                    }
+                    if (tentacles.Count == 8)
+                    {
+                        Debug.Log("maximum tentacle reached");
+                        isInteractable = false;
+                        base.DisableCanvas(); 
+                        foreach (GameObject tentacle in tentacles)
+                        {
+                            Tentacle tentacleScript = tentacle.GetComponent<Tentacle>();
+                            tentacleScript.isInteractable = true;
+                        }
+                    }
                 }
             }
         }
@@ -44,16 +59,58 @@ public class KrakenPuzzleManager : BaseItems
 
     public override void OnInteractEnd()
     {
-        base.OnInteractEnd();
+        if(isInteractable)
+        {
+            base.OnInteractEnd();
+        }
     }
 
     public override void OnHoverBegin()
     {
-        base.OnHoverBegin();
+        if (isInteractable)
+        {
+            base.OnHoverBegin();
+        }
     }
 
     public override void OnHoverEnd()
     {
-        base.OnHoverEnd();
+        if (isInteractable)
+        {
+            base.OnHoverEnd();
+        }
+    }
+
+    public void AddToPassword(string characterToAdd)
+    {
+        currentPassword += characterToAdd;
+        if (currentPassword.Length == 4) 
+        {
+            ComparePassword();
+        }
+    }
+
+    private void ComparePassword()
+    {
+        if (currentPassword == puzzlePassword)
+        {
+            Debug.Log("Kraken puzzle password matches: " + currentPassword);
+            foreach (GameObject tentacle in tentacles)
+            {
+                Tentacle temp = tentacle.GetComponent<Tentacle>();
+                temp.UncurlTentacle();
+                temp.CurlTentacle();                
+            }
+        }
+        else
+        {
+            Debug.Log("Kraken password doesn't match: " + currentPassword);
+            currentPassword = "";
+
+            foreach(GameObject tentacle in tentacles)
+            {
+                tentacle.GetComponent<Tentacle>().UncurlTentacle();
+            }
+        }
     }
 }
