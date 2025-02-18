@@ -12,7 +12,12 @@ public class KrakenPuzzleManager : BaseItems
 
     private PlayerInventory playerInventory;
 
-    private string puzzlePassword = "1234";
+    [SerializeField] string puzzlePassword = "1234";
+    [SerializeField] int passwordLength = 8;
+
+
+    private bool isResetting;
+    float timer = .0f;
 
     [SerializeField] private string currentPassword = "";
 
@@ -24,6 +29,23 @@ public class KrakenPuzzleManager : BaseItems
         playerInventory = FindObjectOfType<PlayerInventory>();
     }
 
+    private void Update()
+    {
+        if (isResetting)
+        {
+            timer += Time.deltaTime;
+
+            if (timer > 1)
+            {
+                isResetting = false;
+                foreach (GameObject tentacle in tentacles)
+                {
+                    tentacle.GetComponent<Tentacle>().UncurlTentacle();
+                }
+            }
+        }
+        
+    }
     public override void OnInteractBegin()
     {
         if (isInteractable)
@@ -98,6 +120,7 @@ public class KrakenPuzzleManager : BaseItems
             foreach (GameObject tentacle in tentacles)
             {
                 Tentacle temp = tentacle.GetComponent<Tentacle>();
+                temp.isInteractable = false;
                 temp.UncurlTentacle();
                 temp.CurlTentacle();                
             }
@@ -106,11 +129,9 @@ public class KrakenPuzzleManager : BaseItems
         {
             Debug.Log("Kraken password doesn't match: " + currentPassword);
             currentPassword = "";
+            isResetting = true;
+            
 
-            foreach(GameObject tentacle in tentacles)
-            {
-                tentacle.GetComponent<Tentacle>().UncurlTentacle();
-            }
         }
     }
 }

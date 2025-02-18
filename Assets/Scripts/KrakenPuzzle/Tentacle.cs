@@ -6,7 +6,11 @@ public class Tentacle : BaseItems
 {
     static int tentacleID = 0;
 
+    private int passwordValue;
+
     public bool isInteractable = false;
+
+    public bool isSelected = false;
 
     private KrakenPuzzleManager krakenPuzzleManager;
 
@@ -15,9 +19,9 @@ public class Tentacle : BaseItems
     public override void Start()
     {
         base.Start();
-        tentacleID++;
+        passwordValue = tentacleID++;
 
-        Debug.Log(tentacleID);
+        //Debug.Log(tentacleID);
 
         anim = GetComponent<Animator>();
         krakenPuzzleManager = FindObjectOfType<KrakenPuzzleManager>();
@@ -28,6 +32,7 @@ public class Tentacle : BaseItems
         if (isInteractable)
         {
             base.OnHoverBegin();
+            Debug.Log("Hovering");
         }
     }
     public override void OnHoverEnd()
@@ -39,11 +44,11 @@ public class Tentacle : BaseItems
     }
     public override void OnInteractBegin()
     {
-        if (isInteractable)
+        if (!isSelected && isInteractable)
         {
             base.OnInteractBegin();
             CurlTentacle();
-            krakenPuzzleManager.AddToPassword(tentacleID.ToString());
+            krakenPuzzleManager.AddToPassword(passwordValue.ToString());
         }
     }
     public override void OnInteractEnd()
@@ -56,11 +61,17 @@ public class Tentacle : BaseItems
 
     public void CurlTentacle()
     {
+        isSelected = true;
         anim.SetBool("IsSelected", true);
     }
 
     public void UncurlTentacle()
     {
+        
+        if (anim.GetCurrentAnimatorStateInfo(0).normalizedTime > 1)
+        {
+            isSelected = false;
+        }
         anim.SetBool("IsSelected", false);
     }
     
