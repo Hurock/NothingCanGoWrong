@@ -241,7 +241,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f07908095b2a364d97052fb934ed283, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isCameraChanging: 0
 --- !u!1001 &365918287
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -828,6 +827,42 @@ PrefabInstance:
       propertyPath: m_LocalRotation.z
       value: 0.0000007339603
       objectReference: {fileID: 0}
+    - target: {fileID: 7057045640570204404, guid: 186facbca30da044cb43aaf580a17f4c, type: 3}
+      propertyPath: inventoryKeyItems.Array.size
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 7057045640570204404, guid: 186facbca30da044cb43aaf580a17f4c, type: 3}
+      propertyPath: inventoryKeyItems.Array.data[0]
+      value: Tentacle
+      objectReference: {fileID: 0}
+    - target: {fileID: 7057045640570204404, guid: 186facbca30da044cb43aaf580a17f4c, type: 3}
+      propertyPath: inventoryKeyItems.Array.data[1]
+      value: Tentacle
+      objectReference: {fileID: 0}
+    - target: {fileID: 7057045640570204404, guid: 186facbca30da044cb43aaf580a17f4c, type: 3}
+      propertyPath: inventoryKeyItems.Array.data[2]
+      value: Tentacle
+      objectReference: {fileID: 0}
+    - target: {fileID: 7057045640570204404, guid: 186facbca30da044cb43aaf580a17f4c, type: 3}
+      propertyPath: inventoryKeyItems.Array.data[3]
+      value: Tentacle
+      objectReference: {fileID: 0}
+    - target: {fileID: 7057045640570204404, guid: 186facbca30da044cb43aaf580a17f4c, type: 3}
+      propertyPath: inventoryKeyItems.Array.data[4]
+      value: Tentacle
+      objectReference: {fileID: 0}
+    - target: {fileID: 7057045640570204404, guid: 186facbca30da044cb43aaf580a17f4c, type: 3}
+      propertyPath: inventoryKeyItems.Array.data[5]
+      value: Tentacle
+      objectReference: {fileID: 0}
+    - target: {fileID: 7057045640570204404, guid: 186facbca30da044cb43aaf580a17f4c, type: 3}
+      propertyPath: inventoryKeyItems.Array.data[6]
+      value: Tentacle
+      objectReference: {fileID: 0}
+    - target: {fileID: 7057045640570204404, guid: 186facbca30da044cb43aaf580a17f4c, type: 3}
+      propertyPath: inventoryKeyItems.Array.data[7]
+      value: Tentacle
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -853,6 +888,63 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 88c3d59656cf5c04b8424fe44e7fbc5f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1001 &3706802708878554973
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1177799715049925712, guid: 4080f912357606f4299655c547076a0f, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 4.94
+      objectReference: {fileID: 0}
+    - target: {fileID: 1177799715049925712, guid: 4080f912357606f4299655c547076a0f, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1177799715049925712, guid: 4080f912357606f4299655c547076a0f, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -3.845
+      objectReference: {fileID: 0}
+    - target: {fileID: 1177799715049925712, guid: 4080f912357606f4299655c547076a0f, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1177799715049925712, guid: 4080f912357606f4299655c547076a0f, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1177799715049925712, guid: 4080f912357606f4299655c547076a0f, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1177799715049925712, guid: 4080f912357606f4299655c547076a0f, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1177799715049925712, guid: 4080f912357606f4299655c547076a0f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1177799715049925712, guid: 4080f912357606f4299655c547076a0f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1177799715049925712, guid: 4080f912357606f4299655c547076a0f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1876288689113983223, guid: 4080f912357606f4299655c547076a0f, type: 3}
+      propertyPath: m_Name
+      value: KrakenPuzzle
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 4080f912357606f4299655c547076a0f, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -864,3 +956,4 @@ SceneRoots:
   - {fileID: 365594249}
   - {fileID: 2139724278}
   - {fileID: 2614578445840412105}
+  - {fileID: 3706802708878554973}
