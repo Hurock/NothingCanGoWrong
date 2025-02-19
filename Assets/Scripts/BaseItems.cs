@@ -9,14 +9,14 @@ public class BaseItems : MonoBehaviour, IInteractable
 {
     Canvas canvas;
 
-    [SerializeField] bool isCameraChanging;
+    private bool isCameraChanging;
 
     CinemachineVirtualCamera PuzzleCamera;
 
     private PlayerMovement characterMovement;
 
     // Start is called before the first frame update
-    void Start()
+    public virtual void Start()
     {
         canvas = GetComponentInChildren<Canvas>();
         characterMovement = FindObjectOfType<PlayerMovement>();
@@ -26,21 +26,21 @@ public class BaseItems : MonoBehaviour, IInteractable
         }
     }
 
-    public void OnHoverEnd()
+    public virtual void OnHoverEnd()
     {
         canvas.enabled = false;
     }
 
-    public void OnHoverBegin()
+    public virtual void OnHoverBegin()
     {
         canvas.enabled = true;
     }
 
-    public void OnInteractBegin()
+    public virtual void OnInteractBegin()
     {
         if (gameObject.tag == "KeyItem")
         {
-            Debug.Log("Picking key item up");
+            //Debug.Log("Picking key item up");
 
             PlayerInventory playerInventory = FindObjectOfType<PlayerInventory>();
             playerInventory.AddKeyItem(gameObject.name);
@@ -48,7 +48,7 @@ public class BaseItems : MonoBehaviour, IInteractable
         }
         else if (gameObject.tag == "Puzzle")
         {
-            if (isCameraChanging) 
+            if (isCameraChanging)
             {
                 characterMovement.enabled = false;
                 Cursor.lockState = CursorLockMode.None;
@@ -56,12 +56,12 @@ public class BaseItems : MonoBehaviour, IInteractable
                 FindObjectOfType<PlayerInputs>().IsPlayerInsidePuzzle = true;
                 // Show Puzzle UI - Saira
             }
-            
-            Debug.Log("Interacting with a puzzle");
+
+            //Debug.Log("Interacting with a puzzle");
         }
     }
 
-    public void OnInteractEnd()
+    public virtual void OnInteractEnd()
     {
         if (isCameraChanging)
         {
@@ -71,5 +71,10 @@ public class BaseItems : MonoBehaviour, IInteractable
             PuzzleCamera.enabled = false;
             // Disable Puzzle UI - Saira
         }
+    }
+
+    public virtual void DisableCanvas()
+    {
+        canvas.enabled = false;
     }
 }
