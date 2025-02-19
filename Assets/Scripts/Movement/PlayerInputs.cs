@@ -23,6 +23,7 @@ public class PlayerInputs : MonoBehaviour
             {
                 activeCamera.enabled = false;
                 IsPlayerInsidePuzzle = false;
+                Camera.main.orthographic = false;
                 Cursor.lockState = CursorLockMode.Locked;
                 GetComponent<PlayerMovement>().enabled = true;
             }
