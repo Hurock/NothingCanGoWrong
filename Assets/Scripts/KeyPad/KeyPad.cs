@@ -16,6 +16,7 @@ public class KeyPad : MonoBehaviour
     public void ButtonClicked(string number)
     {
         userInput += number;
+        Debug.Log(userInput + "pass word");
         if (userInput.Length >= 4)
         {
             if(userInput == password)
