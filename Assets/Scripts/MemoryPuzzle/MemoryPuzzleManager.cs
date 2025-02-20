@@ -9,8 +9,9 @@ public class MemoryPuzzleManager : BaseItems
     private BoxCollider bc;
     private bool isEnabled = true;
 
-    private Button button;
-    private int pipe = 0, wrench = 0, wheel = 0, wire = 0;
+    public Button button;
+    private bool pipe1 = false, wrench1 = false, wheel1 = false, wire1 = false;
+    private bool pipe2 = false, wrench2 = false, wheel2 = false, wire2 = false;
     private int allCardsMatched = 0;
     private int currentCards = 0;
     private string cardPicked = "";
@@ -22,73 +23,60 @@ public class MemoryPuzzleManager : BaseItems
 
     public void ButtonClicked(string card)
     {
-        cardPicked += card;
-        currentCards++;
         Debug.Log(cardPicked + "was picked");
 
-        if (card == "Pipe")
-        {
-            pipe++;
-            Debug.Log("Pipes = " + pipe);
-        }
-        if (card == "Wrench")
-        {
-            wrench++;
-            Debug.Log("Wrenches = " + wrench);
-        }
-        if (card == "Wheel")
-        {
-            wheel++;
-            Debug.Log("Wheels = " + wheel);
-        }
-        if (card == "Wire")
-        {
-            wire++;
-            Debug.Log("Wires = " + wire);
-        }
+        if (card == "Pipe1" && !pipe1) { cardPicked += card; pipe1 = true; currentCards++; }
+        if (card == "Pipe2" && !pipe2) { cardPicked += card; pipe2 = true; currentCards++; }
+        if (card == "Wrench1" && !wrench1) { cardPicked += card; wrench1 = true; currentCards++; }
+        if (card == "Wrench2" && !wrench2) { cardPicked += card; wrench2 = true; currentCards++; }
+        if (card == "Wheel1" && !wheel1) { cardPicked += card; wheel1 = true; currentCards++; }
+        if (card == "Wheel2" && !wheel2) { cardPicked += card; wheel2 = true; currentCards++; }
+        if (card == "Wire1" && !wire1) { cardPicked += card; wire1 = true; currentCards++; }
+        if (card == "Wire2" && !wire2) { cardPicked += card; wire2 = true; currentCards++; }
+
+        Debug.Log(card + " set to true");
 
         if (currentCards >= 2)
         {
-            if(pipe == 2)
-            {
-                DisbaleButtonsWithTag("Pipe");
-                cardPicked = "";
-                allCardsMatched++;
-                currentCards = 0;
-            }
-            else if (wrench == 2)
-            {
-                DisbaleButtonsWithTag("Wrench");
-                cardPicked = "";
-                allCardsMatched++;
-                currentCards = 0;
-            }
-            else if (wheel == 2)
-            {
-                DisbaleButtonsWithTag("Wheel");
-                cardPicked = "";
-                allCardsMatched++;
-                currentCards = 0;
-            }
-            else if (wire == 2)
-            {
-                DisbaleButtonsWithTag("Wire");
-                cardPicked = "";
-                allCardsMatched++;
-                currentCards = 0;
-            }
-            else
-            {
-                ResetCards();
-            }
+            CheckForMatches();
         }
+
+    }
+
+    public void CheckForMatches()
+    {
+        if (pipe1 == true && pipe2 == true)
+        {
+            DisbaleButtonsWithTag("Pipe");
+            allCardsMatched++;
+        }
+        else if (wrench1 == true && wrench2 == true)
+        {
+            DisbaleButtonsWithTag("Wrench");
+            allCardsMatched++;
+        }
+        else if (wheel1 == true && wheel2 == true)
+        {
+            DisbaleButtonsWithTag("Wheel");
+            allCardsMatched++;
+        }
+        else if (wire1 == true && wire2 == true)
+        {
+            DisbaleButtonsWithTag("Wire");
+            allCardsMatched++;
+        }
+        else
+        {
+            ResetCards();
+        }
+        cardPicked = "";
+        currentCards = 0;
         if (allCardsMatched == 4)
         {
             Debug.Log("You got a match");
             OnInteractEnd();
             OnPuzzleSolved.Invoke();
         }
-
     }
 
     public void DisbaleButtonsWithTag(string tag)
@@ -104,12 +92,16 @@ public class MemoryPuzzleManager : BaseItems
     private void ResetCards()
     {
         Debug.Log("You picked wrong");
+        pipe1 = false;
+        pipe2 = false;
+        wrench1 = false;
+        wrench2 = false;
+        wheel1 = false;
+        wheel2 = false;
+        wire1 = false;
+        wire2 = false;
         cardPicked = "";
         currentCards = 0;
-        pipe = 0;
-        wrench = 0;
-        wheel = 0;
-        wire = 0;
     }
 
     public override void OnHoverBegin()
