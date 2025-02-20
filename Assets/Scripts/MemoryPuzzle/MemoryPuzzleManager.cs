@@ -9,7 +9,6 @@ public class MemoryPuzzleManager : BaseItems
     private BoxCollider bc;
     private bool isEnabled = true;
 
-    public Button button;
     private bool pipe1 = false, wrench1 = false, wheel1 = false, wire1 = false;
     private bool pipe2 = false, wrench2 = false, wheel2 = false, wire2 = false;
     private int allCardsMatched = 0;
@@ -23,24 +22,24 @@ public class MemoryPuzzleManager : BaseItems
 
     public void ButtonClicked(string card)
     {
-        Debug.Log(cardPicked + "was picked");
+        //Debug.Log(cardPicked + "was picked");
 
-        if (card == "Pipe1" && !pipe1) { cardPicked += card; pipe1 = true; currentCards++; }
+        if (card == "Pipe1" && !pipe1) { cardPicked += card; pipe1 = true; currentCards++; Debug.Log(cardPicked + "was picked"); }
         if (card == "Pipe2" && !pipe2) { cardPicked += card; pipe2 = true; currentCards++; }
-        if (card == "Wrench1" && !wrench1) { cardPicked += card; wrench1 = true; currentCards++; }
-        if (card == "Wrench2" && !wrench2) { cardPicked += card; wrench2 = true; currentCards++; }
-        if (card == "Wheel1" && !wheel1) { cardPicked += card; wheel1 = true; currentCards++; }
-        if (card == "Wheel2" && !wheel2) { cardPicked += card; wheel2 = true; currentCards++; }
-        if (card == "Wire1" && !wire1) { cardPicked += card; wire1 = true; currentCards++; }
-        if (card == "Wire2" && !wire2) { cardPicked += card; wire2 = true; currentCards++; }
+        if (card == "Wrench1" && !wrench1) { cardPicked += card; wrench1 = true; currentCards++; Debug.Log(cardPicked + "was picked"); }
+        if (card == "Wrench2" && !wrench2) { cardPicked += card; wrench2 = true; currentCards++; Debug.Log(cardPicked + "was picked"); }
+        if (card == "Wheel1" && !wheel1) { cardPicked += card; wheel1 = true; currentCards++; Debug.Log(cardPicked + "was picked"); }
+        if (card == "Wheel2" && !wheel2) { cardPicked += card; wheel2 = true; currentCards++; Debug.Log(cardPicked + "was picked"); }
+        if (card == "Wire1" && !wire1) { cardPicked += card; wire1 = true; currentCards++; Debug.Log(cardPicked + "was picked"); }
+        if (card == "Wire2" && !wire2) { cardPicked += card; wire2 = true; currentCards++; Debug.Log(cardPicked + "was picked"); }
 
-        Debug.Log(card + " set to true");
+        //Debug.Log(card + " set to true");
 
         if (currentCards >= 2)
         {
             CheckForMatches();
+            ResetCards();
         }
-
     }
 
     public void CheckForMatches()
