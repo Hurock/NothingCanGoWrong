@@ -7,6 +7,12 @@ public class PlayerInputs : MonoBehaviour
 {
     public bool IsPlayerInsidePuzzle { get; set; }
 
+    IInteractable currentPuzzle;
+
+    public void setCurrentPuzzle(IInteractable puzzle)
+    {
+        currentPuzzle = puzzle as IInteractable;
+    }
     // Start is called before the first frame update
     void Start()
     {
@@ -18,15 +24,23 @@ public class PlayerInputs : MonoBehaviour
     {
         if (IsPlayerInsidePuzzle && Input.GetKey(KeyCode.Escape))
         {
-            CinemachineVirtualCamera activeCamera = Camera.main.gameObject.GetComponent<CinemachineBrain>().ActiveVirtualCamera.VirtualCameraGameObject.GetComponentInChildren<CinemachineVirtualCamera>();
-            if (activeCamera)
+            if (currentPuzzle != null)
             {
-                activeCamera.enabled = false;
-                IsPlayerInsidePuzzle = false;
-                Camera.main.orthographic = false;
-                Cursor.lockState = CursorLockMode.Locked;
-                GetComponent<PlayerMovement>().enabled = true;
+                currentPuzzle.OnInteractEnd();
             }
+            else
+            {
+                Debug.Log("No puzzle found");
+            }
+            //CinemachineVirtualCamera activeCamera = Camera.main.gameObject.GetComponent<CinemachineBrain>().ActiveVirtualCamera.VirtualCameraGameObject.GetComponentInChildren<CinemachineVirtualCamera>();
+            //if (activeCamera)
+            //{
+            //    activeCamera.enabled = false;
+            //    IsPlayerInsidePuzzle = false;
+            //    Camera.main.orthographic = false;
+            //    Cursor.lockState = CursorLockMode.Locked;
+            //    GetComponent<PlayerMovement>().enabled = true;
+            //}
         }
     }
 }

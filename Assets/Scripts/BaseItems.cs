@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using Unity.IO.LowLevel.Unsafe;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class BaseItems : MonoBehaviour, IInteractable
 {
@@ -11,15 +12,23 @@ public class BaseItems : MonoBehaviour, IInteractable
 
     private bool isCameraChanging;
 
+    private bool puzzleSolved;
+
     CinemachineVirtualCamera PuzzleCamera;
 
     private PlayerMovement characterMovement;
+    private PlayerInputs playerInputs;
+
+    public UnityEvent OnPuzzleSolved;
+
+
 
     // Start is called before the first frame update
     public virtual void Start()
     {
         canvas = GetComponentInChildren<Canvas>();
         characterMovement = FindObjectOfType<PlayerMovement>();
+        playerInputs = FindObjectOfType<PlayerInputs>();
         if (PuzzleCamera = GetComponentInChildren<CinemachineVirtualCamera>())
         {
             isCameraChanging = true;
@@ -48,6 +57,7 @@ public class BaseItems : MonoBehaviour, IInteractable
         }
         else if (gameObject.tag == "Puzzle")
         {
+            playerInputs.setCurrentPuzzle(this);
             if (isCameraChanging)
             {
                 characterMovement.enabled = false;
