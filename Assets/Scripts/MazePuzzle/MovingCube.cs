@@ -20,6 +20,8 @@ public class MovingCube : MonoBehaviour
     {
         if (isActive)
         {
+            if (Input.GetKey(KeyCode.Escape)) isActive = false;
+
             float horizontal = Input.GetAxis("Horizontal");
             float vertical = Input.GetAxis("Vertical");
             Vector3 direction = new Vector3(horizontal, 0, vertical).normalized;
