@@ -9,7 +9,7 @@ public class PadPuzzle : BaseItems
     public string password = "1234";
     private string userInput = "";
 
-    bool isEnabled;
+    bool isEnabled = true;
 
     // Start is called before the first frame update
     public override void Start()
