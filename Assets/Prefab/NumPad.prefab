@@ -10,8 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6611794121866128045}
   - component: {fileID: 2988874454156239161}
-  - component: {fileID: 4513234829813441425}
-  - component: {fileID: 3445134230228540442}
+  - component: {fileID: 760183360536449894}
   m_Layer: 7
   m_Name: NumPad
   m_TagString: Puzzle
@@ -50,8 +49,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e7c6c4d2f2e598441878174a74ac6741, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!135 &4513234829813441425
-SphereCollider:
+  OnPuzzleSolved:
+    m_PersistentCalls:
+      m_Calls: []
+  password: 1234
+--- !u!65 &760183360536449894
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -69,21 +72,8 @@ SphereCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Radius: 0.5
+  m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &3445134230228540442
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 444692619057066122}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f9689a2c3ac281e4fb1c2cd31d9f12eb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  password: 1234
 --- !u!1 &962649298186468647
 GameObject:
   m_ObjectHideFlags: 0
@@ -154,8 +144,8 @@ MonoBehaviour:
   KeypadClicked:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 3445134230228540442}
-        m_TargetAssemblyTypeName: KeyPad, Assembly-CSharp
+      - m_Target: {fileID: 2988874454156239161}
+        m_TargetAssemblyTypeName: PadPuzzle, Assembly-CSharp
         m_MethodName: ButtonClicked
         m_Mode: 5
         m_Arguments:
@@ -236,8 +226,8 @@ MonoBehaviour:
   KeypadClicked:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 3445134230228540442}
-        m_TargetAssemblyTypeName: KeyPad, Assembly-CSharp
+      - m_Target: {fileID: 2988874454156239161}
+        m_TargetAssemblyTypeName: PadPuzzle, Assembly-CSharp
         m_MethodName: ButtonClicked
         m_Mode: 5
         m_Arguments:
@@ -390,8 +380,8 @@ MonoBehaviour:
   KeypadClicked:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 3445134230228540442}
-        m_TargetAssemblyTypeName: KeyPad, Assembly-CSharp
+      - m_Target: {fileID: 2988874454156239161}
+        m_TargetAssemblyTypeName: PadPuzzle, Assembly-CSharp
         m_MethodName: ButtonClicked
         m_Mode: 5
         m_Arguments:
@@ -560,8 +550,8 @@ MonoBehaviour:
   KeypadClicked:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 3445134230228540442}
-        m_TargetAssemblyTypeName: KeyPad, Assembly-CSharp
+      - m_Target: {fileID: 2988874454156239161}
+        m_TargetAssemblyTypeName: PadPuzzle, Assembly-CSharp
         m_MethodName: ButtonClicked
         m_Mode: 5
         m_Arguments:
@@ -642,8 +632,8 @@ MonoBehaviour:
   KeypadClicked:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 3445134230228540442}
-        m_TargetAssemblyTypeName: KeyPad, Assembly-CSharp
+      - m_Target: {fileID: 2988874454156239161}
+        m_TargetAssemblyTypeName: PadPuzzle, Assembly-CSharp
         m_MethodName: ButtonClicked
         m_Mode: 5
         m_Arguments:
@@ -724,8 +714,8 @@ MonoBehaviour:
   KeypadClicked:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 3445134230228540442}
-        m_TargetAssemblyTypeName: KeyPad, Assembly-CSharp
+      - m_Target: {fileID: 2988874454156239161}
+        m_TargetAssemblyTypeName: PadPuzzle, Assembly-CSharp
         m_MethodName: ButtonClicked
         m_Mode: 5
         m_Arguments:
@@ -847,8 +837,8 @@ MonoBehaviour:
   KeypadClicked:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 3445134230228540442}
-        m_TargetAssemblyTypeName: KeyPad, Assembly-CSharp
+      - m_Target: {fileID: 2988874454156239161}
+        m_TargetAssemblyTypeName: PadPuzzle, Assembly-CSharp
         m_MethodName: ButtonClicked
         m_Mode: 5
         m_Arguments:
@@ -929,8 +919,8 @@ MonoBehaviour:
   KeypadClicked:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 3445134230228540442}
-        m_TargetAssemblyTypeName: KeyPad, Assembly-CSharp
+      - m_Target: {fileID: 2988874454156239161}
+        m_TargetAssemblyTypeName: PadPuzzle, Assembly-CSharp
         m_MethodName: ButtonClicked
         m_Mode: 5
         m_Arguments:
@@ -1011,8 +1001,8 @@ MonoBehaviour:
   KeypadClicked:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 3445134230228540442}
-        m_TargetAssemblyTypeName: KeyPad, Assembly-CSharp
+      - m_Target: {fileID: 2988874454156239161}
+        m_TargetAssemblyTypeName: PadPuzzle, Assembly-CSharp
         m_MethodName: ButtonClicked
         m_Mode: 5
         m_Arguments:
@@ -1093,8 +1083,8 @@ MonoBehaviour:
   KeypadClicked:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 3445134230228540442}
-        m_TargetAssemblyTypeName: KeyPad, Assembly-CSharp
+      - m_Target: {fileID: 2988874454156239161}
+        m_TargetAssemblyTypeName: PadPuzzle, Assembly-CSharp
         m_MethodName: ButtonClicked
         m_Mode: 5
         m_Arguments:
