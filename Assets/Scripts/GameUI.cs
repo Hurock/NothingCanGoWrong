@@ -10,11 +10,13 @@ public class GameUI : MonoBehaviour
     public enum GameState { MainMenu, Paused, Playing, Winner, Credits, MatchingPuzzle };
     public GameState currentState;
 
-    public GameObject mainMenuPanel, pauseMenuPanel, creditMenuPanel, matchingPuzzlePanel, winnerPanel;
+    public GameObject mainMenuPanel, pauseMenuPanel, creditMenuPanel, matchingPuzzlePanel, winnerPanel, cardImage;
+    private bool isFlipped = false;
+    private bool isAnimating = false;
 
     // Start is called before the first frame update
 
-        void Awake()
+    void Awake()
     {
         if (SceneManager.GetActiveScene().name == "MainMenu")
         {
@@ -134,10 +136,12 @@ public class GameUI : MonoBehaviour
             if (currentState == GameState.Playing)
             {
                 CheckGameState(GameState.Paused);
+                Cursor.lockState = CursorLockMode.None;
             }
             else if (currentState == GameState.Paused)
             {
                 CheckGameState(GameState.Playing);
+                Cursor.lockState = CursorLockMode.Locked;
             }
         }
     }
@@ -177,5 +181,32 @@ public class GameUI : MonoBehaviour
         CheckGameState(GameState.MatchingPuzzle);
     }
 
+    public void FlipCardAnimation()
+    {
+        if (!isAnimating)
+        {
+            StartCoroutine(Flip());
+        }
+    }
+    private IEnumerator Flip()
+    {
+        isAnimating = true;
+        float duration = 0.6f;
+        float elapsed = 0f;
+        Quaternion startRotation = transform.rotation;
+        Quaternion endRotation = Quaternion.Euler(0, isFlipped ? 0 : 180, 0);
+
+        while (elapsed < duration)
+        {
+            transform.rotation = Quaternion.Slerp(startRotation, endRotation, elapsed / duration);
+            elapsed += Time.deltaTime;
+            yield return null;
+        }
+
+        transform.rotation = endRotation;
+        isFlipped = !isFlipped;
+        isAnimating = false;
+        cardImage.SetActive(isFlipped);
+    }
 
 }
