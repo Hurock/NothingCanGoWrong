@@ -35,9 +35,10 @@ public class KrakenPuzzleManager : BaseItems
         {
             timer += Time.deltaTime;
 
-            if (timer > 1)
+            if (timer >= 1)
             {
                 isResetting = false;
+                timer = 0;
                 foreach (GameObject tentacle in tentacles)
                 {
                     tentacle.GetComponent<Tentacle>().UncurlTentacle();

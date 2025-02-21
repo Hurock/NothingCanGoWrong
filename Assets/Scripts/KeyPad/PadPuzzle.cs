@@ -4,19 +4,19 @@ using UnityEngine;
 
 public class PadPuzzle : BaseItems
 {
-    private SphereCollider sc;
+    private BoxCollider col;
 
     public string password = "1234";
     private string userInput = "";
 
-    bool isEnabled;
+    bool isEnabled = true;
 
     // Start is called before the first frame update
     public override void Start()
     {
         base.Start();
         userInput = "";
-        sc = GetComponent<SphereCollider>();
+        col = GetComponent<BoxCollider>();
     }
 
     // Update is called once per frame
@@ -45,14 +45,14 @@ public class PadPuzzle : BaseItems
         if (isEnabled)
         {
             base.OnInteractBegin();
-            sc.enabled = false;
+            col.enabled = false;
         }
     }
 
     public override void OnInteractEnd()
     {
         base.OnInteractEnd();
-        sc.enabled = true;
+        col.enabled = true;
     }
     public void ButtonClicked(string number)
     {

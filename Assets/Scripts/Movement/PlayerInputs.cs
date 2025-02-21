@@ -32,15 +32,6 @@ public class PlayerInputs : MonoBehaviour
             {
                 Debug.Log("No puzzle found");
             }
-            //CinemachineVirtualCamera activeCamera = Camera.main.gameObject.GetComponent<CinemachineBrain>().ActiveVirtualCamera.VirtualCameraGameObject.GetComponentInChildren<CinemachineVirtualCamera>();
-            //if (activeCamera)
-            //{
-            //    activeCamera.enabled = false;
-            //    IsPlayerInsidePuzzle = false;
-            //    Camera.main.orthographic = false;
-            //    Cursor.lockState = CursorLockMode.Locked;
-            //    GetComponent<PlayerMovement>().enabled = true;
-            //}
         }
     }
 }
