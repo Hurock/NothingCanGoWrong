@@ -5,10 +5,13 @@ public class PlayerMovement : MonoBehaviour
     public float speed = 5f;
     public float rotationSpeed = 720f;
     public float mouseSensitivity = 100f;
+    public float gravity = -9.81f;
 
     private CharacterController controller;
     private Transform cameraTransform;
     private Animator animator;
+    private Vector3 velocity; // Stores gravity effect
+    private bool isGrounded;
 
     void Start()
     {
@@ -20,6 +23,13 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
+        isGrounded = controller.isGrounded;
+
+        if (isGrounded && velocity.y < 0)
+        {
+            velocity.y = -2f; // Small negative value to keep grounded
+        }
+
         // Player Movement
         float horizontal = Input.GetAxis("Horizontal");
         float vertical = Input.GetAxis("Vertical");
@@ -38,5 +48,8 @@ public class PlayerMovement : MonoBehaviour
         {
             animator.SetBool("IsWalking", false);
         }
+
+        velocity.y += gravity * Time.deltaTime;
+        controller.Move(velocity * Time.deltaTime);
     }
 }
