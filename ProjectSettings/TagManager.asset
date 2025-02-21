@@ -7,6 +7,10 @@ TagManager:
   - KeyItem
   - Puzzle
   - MazeEnd
+  - Pipe
+  - Wrench
+  - Wheel
+  - Wire
   layers:
   - Default
   - TransparentFX
