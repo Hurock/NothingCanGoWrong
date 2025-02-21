@@ -17,6 +17,7 @@ public class PipePuzzleManager : BaseItems
     // Start is called before the first frame update
     public override void Start()
     {
+        base.Start();
         bc = GetComponent<BoxCollider>();
     }
 

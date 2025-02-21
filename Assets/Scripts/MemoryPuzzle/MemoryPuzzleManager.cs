@@ -17,6 +17,7 @@ public class MemoryPuzzleManager : BaseItems
 
     public override void Start()
     {
+        base.Start();
         bc = GetComponent<BoxCollider>();
     }
 
