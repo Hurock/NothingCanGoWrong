@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1499592588460373795}
   - component: {fileID: 8518597084227415167}
+  - component: {fileID: 219159643338499845}
   m_Layer: 7
   m_Name: Tentacle
   m_TagString: KeyItem
@@ -55,6 +56,21 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.45460367, y: 0.4242621, z: 0.61568165}
   m_Center: {x: 0.12581944, y: -0.037868947, z: 0.22806597}
+--- !u!114 &219159643338499845
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1982638391308099670}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f07908095b2a364d97052fb934ed283, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OnPuzzleSolved:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1001 &2231928504980909348
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -131,7 +147,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7815575791713459668, guid: 30d57c5ae7cd7094a9f240bcdb19c81e, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 0.283
       objectReference: {fileID: 0}
     - target: {fileID: 7815575791713459668, guid: 30d57c5ae7cd7094a9f240bcdb19c81e, type: 3}
       propertyPath: m_LocalPosition.y
@@ -139,7 +155,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7815575791713459668, guid: 30d57c5ae7cd7094a9f240bcdb19c81e, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 0.28
       objectReference: {fileID: 0}
     - target: {fileID: 7815575791713459668, guid: 30d57c5ae7cd7094a9f240bcdb19c81e, type: 3}
       propertyPath: m_LocalRotation.w

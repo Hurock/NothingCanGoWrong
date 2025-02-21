@@ -37,6 +37,14 @@ public class LightBehaviour : MonoBehaviour
     public void SetLightOn(bool lightOn)
     {
         isLightOn = lightOn;
+        if (lightOn)
+        {
+            lightComp.enabled = true;
+        }
+        else
+        {
+            lightComp.enabled = false;
+        }
     }
 
     public void SetFlickering(bool flickering)
@@ -44,8 +52,8 @@ public class LightBehaviour : MonoBehaviour
         isLightOn = true;
         isLightFlickering = flickering;
     }    
-    public void ChangeColor(Color color)
+    public void ChangeColorToWhite()
     {
-        lightComp.color = color;
+        lightComp.color = Color.white;
     }
 }
