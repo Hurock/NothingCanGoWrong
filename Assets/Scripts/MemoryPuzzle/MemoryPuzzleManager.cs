@@ -9,8 +9,8 @@ public class MemoryPuzzleManager : BaseItems
     private BoxCollider bc;
     private bool isEnabled = true;
 
-    private bool pipe1 = false, wrench1 = false, wheel1 = false, wire1 = false;
-    private bool pipe2 = false, wrench2 = false, wheel2 = false, wire2 = false;
+    private bool octopus1 = false, starfish1 = false, otter1 = false, elephant1 = false, crab1 = false, chicken1 = false;
+    private bool octopus2 = false, starfish2 = false, otter2 = false, elephant2 = false, crab2 = false, chicken2 = false;
     private int allCardsMatched = 0;
     private int currentCards = 0;
     private string cardPicked = "";
@@ -25,14 +25,18 @@ public class MemoryPuzzleManager : BaseItems
     {
         //Debug.Log(cardPicked + "was picked");
 
-        if (card == "Pipe1" && !pipe1) { cardPicked += card; pipe1 = true; currentCards++; Debug.Log(cardPicked + "was picked"); }
-        if (card == "Pipe2" && !pipe2) { cardPicked += card; pipe2 = true; currentCards++; }
-        if (card == "Wrench1" && !wrench1) { cardPicked += card; wrench1 = true; currentCards++; Debug.Log(cardPicked + "was picked"); }
-        if (card == "Wrench2" && !wrench2) { cardPicked += card; wrench2 = true; currentCards++; Debug.Log(cardPicked + "was picked"); }
-        if (card == "Wheel1" && !wheel1) { cardPicked += card; wheel1 = true; currentCards++; Debug.Log(cardPicked + "was picked"); }
-        if (card == "Wheel2" && !wheel2) { cardPicked += card; wheel2 = true; currentCards++; Debug.Log(cardPicked + "was picked"); }
-        if (card == "Wire1" && !wire1) { cardPicked += card; wire1 = true; currentCards++; Debug.Log(cardPicked + "was picked"); }
-        if (card == "Wire2" && !wire2) { cardPicked += card; wire2 = true; currentCards++; Debug.Log(cardPicked + "was picked"); }
+        if (card == "Octopus1" && !octopus1) { cardPicked += card; octopus1 = true; currentCards++; Debug.Log(cardPicked + "was picked"); }
+        if (card == "Octopus2" && !octopus2) { cardPicked += card; octopus2 = true; currentCards++; }
+        if (card == "StarFish1" && !starfish1) { cardPicked += card; starfish1 = true; currentCards++; Debug.Log(cardPicked + "was picked"); }
+        if (card == "StarFish2" && !starfish2) { cardPicked += card; starfish2 = true; currentCards++; Debug.Log(cardPicked + "was picked"); }
+        if (card == "Otter1" && !otter1) { cardPicked += card; otter1 = true; currentCards++; Debug.Log(cardPicked + "was picked"); }
+        if (card == "Otter2" && !otter2) { cardPicked += card; otter2 = true; currentCards++; Debug.Log(cardPicked + "was picked"); }
+        if (card == "Elephant1" && !elephant1) { cardPicked += card; elephant1 = true; currentCards++; Debug.Log(cardPicked + "was picked"); }
+        if (card == "Elephant2" && !elephant2) { cardPicked += card; elephant2 = true; currentCards++; Debug.Log(cardPicked + "was picked"); }
+        if (card == "Crab1" && !crab1) { cardPicked += card; crab1 = true; currentCards++; Debug.Log(cardPicked + "was picked"); }
+        if (card == "Crab2" && !crab2) { cardPicked += card; crab2 = true; currentCards++; Debug.Log(cardPicked + "was picked"); }
+        if (card == "Chicken1" && !chicken1) { cardPicked += card; chicken1 = true; currentCards++; Debug.Log(cardPicked + "was picked"); }
+        if (card == "Chicken2" && !chicken2) { cardPicked += card; chicken2 = true; currentCards++; Debug.Log(cardPicked + "was picked"); }
 
         //Debug.Log(card + " set to true");
 
@@ -45,24 +49,34 @@ public class MemoryPuzzleManager : BaseItems
 
     public void CheckForMatches()
     {
-        if (pipe1 == true && pipe2 == true)
+        if (octopus1 == true && octopus2 == true)
         {
-            DisbaleButtonsWithTag("Pipe");
+            DisbaleButtonsWithTag("Octopus");
             allCardsMatched++;
         }
-        else if (wrench1 == true && wrench2 == true)
+        else if (starfish1 == true && starfish2 == true)
         {
-            DisbaleButtonsWithTag("Wrench");
+            DisbaleButtonsWithTag("StarFish");
             allCardsMatched++;
         }
-        else if (wheel1 == true && wheel2 == true)
+        else if (otter1 == true && otter2 == true)
         {
-            DisbaleButtonsWithTag("Wheel");
+            DisbaleButtonsWithTag("Otter");
             allCardsMatched++;
         }
-        else if (wire1 == true && wire2 == true)
+        else if (elephant1 == true && elephant2 == true)
         {
-            DisbaleButtonsWithTag("Wire");
+            DisbaleButtonsWithTag("Elephant");
+            allCardsMatched++;
+        }
+        else if (crab1 == true && crab2 == true)
+        {
+            DisbaleButtonsWithTag("Crab");
+            allCardsMatched++;
+        }
+        else if (chicken1 == true && chicken2 == true)
+        {
+            DisbaleButtonsWithTag("Chicken");
             allCardsMatched++;
         }
         else
@@ -71,7 +85,7 @@ public class MemoryPuzzleManager : BaseItems
         }
         cardPicked = "";
         currentCards = 0;
-        if (allCardsMatched == 4)
+        if (allCardsMatched == 6)
         {
             Debug.Log("You got a match");
             OnInteractEnd();
@@ -92,14 +106,18 @@ public class MemoryPuzzleManager : BaseItems
     private void ResetCards()
     {
         Debug.Log("You picked wrong");
-        pipe1 = false;
-        pipe2 = false;
-        wrench1 = false;
-        wrench2 = false;
-        wheel1 = false;
-        wheel2 = false;
-        wire1 = false;
-        wire2 = false;
+        octopus1 = false;
+        octopus2 = false;
+        starfish1 = false;
+        starfish2 = false;
+        otter1 = false;
+        otter2 = false;
+        elephant1 = false;
+        elephant2 = false;
+        crab1 = false;
+        crab2 = false;
+        chicken1 = false;
+        chicken2 = false;
         cardPicked = "";
         currentCards = 0;
     }

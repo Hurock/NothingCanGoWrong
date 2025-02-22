@@ -7,11 +7,13 @@ TagManager:
   - KeyItem
   - Puzzle
   - MazeEnd
-  - Pipe
-  - Wrench
-  - Wheel
-  - Wire
   - Audio
+  - Octopus
+  - StarFish
+  - Otter
+  - Chicken
+  - Elephant
+  - Crab
   layers:
   - Default
   - TransparentFX
