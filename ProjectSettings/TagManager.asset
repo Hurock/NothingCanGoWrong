@@ -11,6 +11,7 @@ TagManager:
   - Wrench
   - Wheel
   - Wire
+  - Audio
   layers:
   - Default
   - TransparentFX

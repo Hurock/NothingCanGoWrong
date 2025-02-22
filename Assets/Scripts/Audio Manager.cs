@@ -11,6 +11,8 @@ public class AudioManager : MonoBehaviour
      [Header("----Audio Clip----")]
      public AudioClip background;
      public AudioClip menubutton;
+     public AudioClip metalfootsteps; 
+  
 
      private void Start()
      {
