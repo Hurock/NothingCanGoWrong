@@ -13,6 +13,13 @@ public class PlayerMovement : MonoBehaviour
     private Vector3 velocity; // Stores gravity effect
     private bool isGrounded;
 
+    AudioManager audioManager;
+
+    private void Awake()
+        {
+           //audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
+        }
+
     void Start()
     {
         controller = GetComponent<CharacterController>();
@@ -34,6 +41,7 @@ public class PlayerMovement : MonoBehaviour
         float horizontal = Input.GetAxis("Horizontal");
         float vertical = Input.GetAxis("Vertical");
         Vector3 direction = new Vector3(horizontal, 0, vertical).normalized;
+
 
         if (direction.magnitude > 0.1f)
         {

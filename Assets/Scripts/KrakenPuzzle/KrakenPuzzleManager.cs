@@ -107,7 +107,7 @@ public class KrakenPuzzleManager : BaseItems
     public void AddToPassword(string characterToAdd)
     {
         currentPassword += characterToAdd;
-        if (currentPassword.Length == 4) 
+        if (currentPassword.Length == 8) 
         {
             ComparePassword();
         }
