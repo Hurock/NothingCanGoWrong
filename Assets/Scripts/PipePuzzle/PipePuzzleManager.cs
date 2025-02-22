@@ -7,12 +7,14 @@ public class PipePuzzleManager : BaseItems
     private BoxCollider bc;
 
     private GameObject currentPipe;
+    private float minimumPipeRotation;
+    private float maximumPipeRotation;
     private float currentPipeRotation;
     private float correctPipeRotation = 0;
     private int correctPipes = 0;
-    private int finishedPipes = 19;
+    private int finishedPipes = 16;
 
-    bool isEnabled;
+    bool isEnabled = true;
 
     // Start is called before the first frame update
     public override void Start()
@@ -23,19 +25,26 @@ public class PipePuzzleManager : BaseItems
 
     public void PipeClicked(string puzzlePiece)
     {
+        //Debug.Log("Pipe clicked");
         currentPipe = GameObject.Find(puzzlePiece);
-        currentPipe.transform.rotation = Quaternion.Euler(currentPipe.transform.eulerAngles.x + 90, currentPipe.transform.eulerAngles.y, currentPipe.transform.eulerAngles.z);
-        currentPipeRotation = currentPipe.transform.rotation.x;
+        
+        //currentPipe.transform.eulerAngles = new Vector3(currentPipe.transform.eulerAngles.x + 90, currentPipe.transform.eulerAngles.y, currentPipe.transform.eulerAngles.z);
+        //currentPipe.transform.Rotate(new Vector3(currentPipe.transform.rotation.x + 90, currentPipe.transform.rotation.y, currentPipe.transform.rotation.z));
+        //currentPipe.transform.rotation = Quaternion.Euler(currentPipe.transform.eulerAngles.x + 90, currentPipe.transform.eulerAngles.y, currentPipe.transform.eulerAngles.z);
+        currentPipeRotation = currentPipe.transform.localEulerAngles.x;
+        CheckPipe();
     }
 
     public void CorrectPipeRotation(int rotation)
     {
         correctPipeRotation = rotation;
+        minimumPipeRotation = correctPipeRotation - 5;
+        maximumPipeRotation = correctPipeRotation + 5;
     }
 
     private void CheckPipe()
     {
-        if(currentPipeRotation == correctPipeRotation)
+        if (Mathf.Abs(currentPipeRotation) <= maximumPipeRotation && Mathf.Abs(currentPipeRotation) >= minimumPipeRotation)
         {
             Debug.Log("correct position");
             correctPipes++;
@@ -49,7 +58,7 @@ public class PipePuzzleManager : BaseItems
         }
         else
         {
-            Debug.Log("Pipes incorrect");
+            //Debug.Log("Pipes incorrect");
         }
     }
 
