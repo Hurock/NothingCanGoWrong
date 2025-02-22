@@ -3,7 +3,117 @@ guid: c33cf60e8aa48724ea3bd4821cc53a82
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Bookcover
+    second: {fileID: 2100000, guid: 17d393b8faa25324d899b32b7d414af4, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Cabinit
+    second: {fileID: 2100000, guid: 44572cdc04f52ec45adcd83ec7ddeb76, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Chair1
+    second: {fileID: 2100000, guid: 7c13a609305c7da458fd50fe7a7ca637, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Chair2
+    second: {fileID: 2100000, guid: c6cc5459c7601bf4e9e0aa49a6f6268c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Handels
+    second: {fileID: 2100000, guid: 52e8278f875a25040a08a4338fa24c6c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Light
+    second: {fileID: 2100000, guid: 2efe958823467ea4c80aec90ba5071cc, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Lightshade
+    second: {fileID: 2100000, guid: 7c13a609305c7da458fd50fe7a7ca637, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Pages
+    second: {fileID: 2100000, guid: c6ed74786bd545e43b4a9aa26de16daa, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Pipes
+    second: {fileID: 2100000, guid: 4570cfb220e148b4a8b06f2410227d01, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Toolbox
+    second: {fileID: 2100000, guid: dd383a1f6a2e16b48a6d2235150659ad, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Window_Glass1
+    second: {fileID: 2100000, guid: 648c0f79dc066f84c9797580e53cde0f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: pasted__Bookcover
+    second: {fileID: 2100000, guid: 17d393b8faa25324d899b32b7d414af4, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: pasted__Cabanit2
+    second: {fileID: 2100000, guid: 44572cdc04f52ec45adcd83ec7ddeb76, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: pasted__Cabinit
+    second: {fileID: 2100000, guid: 7c13a609305c7da458fd50fe7a7ca637, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: pasted__Chair1
+    second: {fileID: 2100000, guid: c6cc5459c7601bf4e9e0aa49a6f6268c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: pasted__Chair2
+    second: {fileID: 2100000, guid: 7c13a609305c7da458fd50fe7a7ca637, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: pasted__Handels
+    second: {fileID: 2100000, guid: 52e8278f875a25040a08a4338fa24c6c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: pasted__Light
+    second: {fileID: 2100000, guid: 2efe958823467ea4c80aec90ba5071cc, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: pasted__Lightshade
+    second: {fileID: 2100000, guid: 7c13a609305c7da458fd50fe7a7ca637, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: pasted__Map
+    second: {fileID: 2100000, guid: 4d0c4160272efad498cd593a19d2f4f7, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: pasted__Pages
+    second: {fileID: 2100000, guid: c6ed74786bd545e43b4a9aa26de16daa, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: pasted__carpet
+    second: {fileID: 2100000, guid: c6cc5459c7601bf4e9e0aa49a6f6268c, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
@@ -90,7 +200,7 @@ ModelImporter:
     armStretch: 0.05
     legStretch: 0.05
     feetSpacing: 0
-    globalScale: 0.06
+    globalScale: 6
     rootMotionBoneName: 
     hasTranslationDoF: 0
     hasExtraRoot: 0
