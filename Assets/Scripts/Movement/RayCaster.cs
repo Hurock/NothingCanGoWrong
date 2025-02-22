@@ -21,7 +21,7 @@ public class RayCaster : MonoBehaviour
     private void Start()
     {
         
-        layerMask = LayerMask.GetMask("Interactable", "Character");
+        layerMask = LayerMask.GetMask("Interactable", "Wall", "Door");
     }
 
     private void FixedUpdate()

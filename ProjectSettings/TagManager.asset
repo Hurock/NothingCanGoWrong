@@ -11,19 +11,20 @@ TagManager:
   - Wrench
   - Wheel
   - Wire
+  - Audio
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Character
   - Water
   - UI
   - 
   - Interactable
   - Maze
-  - 
-  - 
-  - 
+  - Avoid
+  - Wall
+  - Door
   - 
   - 
   - 
