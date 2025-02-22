@@ -147,7 +147,7 @@ public class GameUI : MonoBehaviour
     }
     public void StartGame()
     {
-        SceneManager.LoadScene("AntonioTest");
+        SceneManager.LoadScene("GameplayScene");
         CheckGameState(GameState.Playing);
     }
 
@@ -173,6 +173,7 @@ public class GameUI : MonoBehaviour
     public void WinnerMenu()
 
     {
+        Cursor.lockState = CursorLockMode.None;
         CheckGameState(GameState.Winner);
     }
     public void MatchingPuzzleMenu()

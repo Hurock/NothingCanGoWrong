@@ -123,7 +123,8 @@ public class KrakenPuzzleManager : BaseItems
                 Tentacle temp = tentacle.GetComponent<Tentacle>();
                 temp.isInteractable = false;
                 temp.UncurlTentacle();
-                temp.CurlTentacle();                
+                temp.CurlTentacle();
+                OnPuzzleSolved.Invoke();
             }
         }
         else
