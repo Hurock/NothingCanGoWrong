@@ -223,6 +223,7 @@ MonoBehaviour:
   SFXSource: {fileID: 898745031}
   background: {fileID: 8300000, guid: 7cf4e31264975394b8cdc9b4ab6f8e6e, type: 3}
   menubutton: {fileID: 8300000, guid: c169921a8ebc4e746aff9c82dd7994d3, type: 3}
+  metalfootsteps: {fileID: 0}
 --- !u!4 &497115519
 Transform:
   m_ObjectHideFlags: 0
@@ -606,25 +607,9 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1067949894119494831, guid: f4fc42c3627283b4c9292474f0d11d8f, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: -17.400024
-      objectReference: {fileID: 0}
-    - target: {fileID: 2355100378452013100, guid: f4fc42c3627283b4c9292474f0d11d8f, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2554416985760977448, guid: f4fc42c3627283b4c9292474f0d11d8f, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 2767354627968681931, guid: f4fc42c3627283b4c9292474f0d11d8f, type: 3}
       propertyPath: m_Name
       value: UIPanels
-      objectReference: {fileID: 0}
-    - target: {fileID: 2980557755987312944, guid: f4fc42c3627283b4c9292474f0d11d8f, type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4171795613825305790, guid: f4fc42c3627283b4c9292474f0d11d8f, type: 3}
       propertyPath: m_Pivot.x
@@ -705,18 +690,6 @@ PrefabInstance:
     - target: {fileID: 4171795613825305790, guid: f4fc42c3627283b4c9292474f0d11d8f, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5640380325327327858, guid: f4fc42c3627283b4c9292474f0d11d8f, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7213519814407875957, guid: f4fc42c3627283b4c9292474f0d11d8f, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7431140538300301108, guid: f4fc42c3627283b4c9292474f0d11d8f, type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
