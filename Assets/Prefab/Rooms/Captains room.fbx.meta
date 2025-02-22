@@ -3,7 +3,22 @@ guid: 01ec529df5c369b4fb14bcfc7e7772b0
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: ComputerScreen_A
+    second: {fileID: 2100000, guid: 3c23200f9f43cd444bfc958c473f044e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Switches
+    second: {fileID: 2100000, guid: 261ddc70f1e4940449efc6e77d7b4dcd, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: panel_face
+    second: {fileID: 2100000, guid: 5eacf12bada4b6948bddc46fc61898c9, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
@@ -90,7 +105,7 @@ ModelImporter:
     armStretch: 0.05
     legStretch: 0.05
     feetSpacing: 0
-    globalScale: 0.06
+    globalScale: 6
     rootMotionBoneName: 
     hasTranslationDoF: 0
     hasExtraRoot: 0

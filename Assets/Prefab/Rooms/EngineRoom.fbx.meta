@@ -3,7 +3,117 @@ guid: f16dc18a5bbe3634db3a196b0a55a12f
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Borders
+    second: {fileID: 2100000, guid: 52e8278f875a25040a08a4338fa24c6c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Buttonsit
+    second: {fileID: 2100000, guid: 44572cdc04f52ec45adcd83ec7ddeb76, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Cabinit
+    second: {fileID: 2100000, guid: 44572cdc04f52ec45adcd83ec7ddeb76, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Cable
+    second: {fileID: 2100000, guid: 30e2f571d48f0b44eabe9dd0861f50f6, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Computer_screen
+    second: {fileID: 2100000, guid: c074c81ab0a3c244c85a3aa8eb2b1650, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Engine
+    second: {fileID: 2100000, guid: 7c13a609305c7da458fd50fe7a7ca637, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: EnginePannels
+    second: {fileID: 2100000, guid: 478c63d42f085c8419fde3437e13565a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Light
+    second: {fileID: 2100000, guid: 2efe958823467ea4c80aec90ba5071cc, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Lightshade
+    second: {fileID: 2100000, guid: 52e8278f875a25040a08a4338fa24c6c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Pipes
+    second: {fileID: 2100000, guid: 4570cfb220e148b4a8b06f2410227d01, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: SwitchGlass
+    second: {fileID: 2100000, guid: eee0516bbcc2bbf428d642b742a2f4f5, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Switchcase
+    second: {fileID: 2100000, guid: a54f402eb84f9884a9e4a9ef8a42ecd5, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Switches
+    second: {fileID: 2100000, guid: 44572cdc04f52ec45adcd83ec7ddeb76, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Valve
+    second: {fileID: 2100000, guid: dd383a1f6a2e16b48a6d2235150659ad, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Valve2
+    second: {fileID: 2100000, guid: 478c63d42f085c8419fde3437e13565a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Window_Glass1
+    second: {fileID: 2100000, guid: 648c0f79dc066f84c9797580e53cde0f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: blinn2
+    second: {fileID: 2100000, guid: 7c13a609305c7da458fd50fe7a7ca637, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: lambert51
+    second: {fileID: 2100000, guid: 52e8278f875a25040a08a4338fa24c6c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: panel_face
+    second: {fileID: 2100000, guid: 7c13a609305c7da458fd50fe7a7ca637, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: pasted__Light
+    second: {fileID: 2100000, guid: 2efe958823467ea4c80aec90ba5071cc, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: pasted__Lightshade
+    second: {fileID: 2100000, guid: 7c13a609305c7da458fd50fe7a7ca637, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: pasted__blinn2
+    second: {fileID: 2100000, guid: 2efe958823467ea4c80aec90ba5071cc, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
@@ -90,7 +200,7 @@ ModelImporter:
     armStretch: 0.05
     legStretch: 0.05
     feetSpacing: 0
-    globalScale: 0.06
+    globalScale: 6
     rootMotionBoneName: 
     hasTranslationDoF: 0
     hasExtraRoot: 0

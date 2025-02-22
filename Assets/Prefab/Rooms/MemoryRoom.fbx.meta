@@ -3,7 +3,72 @@ guid: aead864cf9ffd6f48aa4ed968ecbd4a7
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Bedframe
+    second: {fileID: 2100000, guid: 7c13a609305c7da458fd50fe7a7ca637, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Blanket
+    second: {fileID: 2100000, guid: 00d344eab8f41ce47a57992471ad0b18, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: BoardBorder
+    second: {fileID: 2100000, guid: 17d393b8faa25324d899b32b7d414af4, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Bookcover
+    second: {fileID: 2100000, guid: 17d393b8faa25324d899b32b7d414af4, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Bottle
+    second: {fileID: 2100000, guid: d8b2b11d73b9c5649b769cb79995e064, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Cabanit2
+    second: {fileID: 2100000, guid: 52e8278f875a25040a08a4338fa24c6c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Cabinit
+    second: {fileID: 2100000, guid: 44572cdc04f52ec45adcd83ec7ddeb76, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Chair1
+    second: {fileID: 2100000, guid: 7c13a609305c7da458fd50fe7a7ca637, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Chair2
+    second: {fileID: 2100000, guid: c6cc5459c7601bf4e9e0aa49a6f6268c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Handels
+    second: {fileID: 2100000, guid: 7c13a609305c7da458fd50fe7a7ca637, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Light
+    second: {fileID: 2100000, guid: 2efe958823467ea4c80aec90ba5071cc, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Lightshade
+    second: {fileID: 2100000, guid: 52e8278f875a25040a08a4338fa24c6c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: pasted__Cabanit2
+    second: {fileID: 2100000, guid: 44572cdc04f52ec45adcd83ec7ddeb76, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
@@ -90,7 +155,7 @@ ModelImporter:
     armStretch: 0.05
     legStretch: 0.05
     feetSpacing: 0
-    globalScale: 0.06
+    globalScale: 6
     rootMotionBoneName: 
     hasTranslationDoF: 0
     hasExtraRoot: 0
