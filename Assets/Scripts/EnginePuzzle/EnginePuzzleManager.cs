@@ -9,6 +9,8 @@ public class EnginePuzzleManager : BaseItems
 
     [SerializeField] List<Valve> valves = new();
 
+    int valvesChecks = 0;
+
     // Start is called before the first frame update
     public override void Start()
     {
@@ -59,9 +61,8 @@ public class EnginePuzzleManager : BaseItems
         {
             if(valve.currentPosition == 0)
             {
-                int temp = 0;
-                temp++;
-                if (temp == valves.Count)
+                valvesChecks++;
+                if (valvesChecks == valves.Count)
                 {
                     DisableValves();
                     Debug.Log("Engine fixed!");
@@ -70,7 +71,7 @@ public class EnginePuzzleManager : BaseItems
             }
             else
             {
-                break;
+                valvesChecks = 0;
             }
         }
     }

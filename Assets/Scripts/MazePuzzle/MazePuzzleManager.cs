@@ -51,6 +51,7 @@ public class MazePuzzleManager : BaseItems
         if (isInteractable)
         {
             base.OnInteractEnd();
+            OnPuzzleSolved.Invoke();
             cube.isActive = false;
             Camera.main.orthographic = false;
         }
