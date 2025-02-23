@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PlayerInventory : MonoBehaviour
 {
+    [SerializeField] private AudioClip itemPickUp;
     [SerializeField] private List<string> inventoryKeyItems = new();
 
     // Start is called before the first frame update
@@ -26,6 +27,7 @@ public class PlayerInventory : MonoBehaviour
     public void AddKeyItem(string itemToAdd)
     {
         inventoryKeyItems.Add(itemToAdd);
+        SoundFXManager.instance.PlaySoundFXClip(itemPickUp, transform, 1f);
     }
 
     public void RemoveKeyItem(int itemToRemove)

@@ -5,6 +5,7 @@ using UnityEngine.Events;
 
 public class Candle : BaseItems
 {
+    [SerializeField] private AudioClip fireLight;
     static int candleID = 1;
 
     private int passwordValue;
@@ -61,6 +62,7 @@ public class Candle : BaseItems
     {
         isSelected = true;
         psGameobject.SetActive(true);
+        SoundFXManager.instance.PlaySoundFXClip(fireLight, transform, 1f);
     }
 
     public void TurnOff()

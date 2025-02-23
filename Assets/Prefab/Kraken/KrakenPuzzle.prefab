@@ -179,6 +179,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3a76467e34c80b8478195cd7683bccac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OnPuzzleSolved:
+    m_PersistentCalls:
+      m_Calls: []
+  itemPickUp: {fileID: 8300000, guid: 56128b22ae4c51c4c8b06dda84511550, type: 3}
   tentacleSockets:
   - {fileID: 7524197060416030459}
   - {fileID: 8005968431450419160}
@@ -189,6 +193,9 @@ MonoBehaviour:
   - {fileID: 6596369861082096450}
   - {fileID: 3369870839235471109}
   tentaclePrefab: {fileID: 4345132075552572975, guid: d2a106a3b744df242811b96e137b0cb4, type: 3}
+  puzzlePassword: 1234
+  passwordLength: 8
+  currentPassword: 
 --- !u!136 &791985770262388072
 CapsuleCollider:
   m_ObjectHideFlags: 0

@@ -6,6 +6,7 @@ using UnityEngine.UI;
 
 public class MemoryPuzzleManager : BaseItems
 {
+    [SerializeField] private AudioClip puzzleSolved;
     private BoxCollider bc;
     private bool isEnabled = true;
 
@@ -53,31 +54,37 @@ public class MemoryPuzzleManager : BaseItems
         {
             DisbaleButtonsWithTag("Octopus");
             allCardsMatched++;
+            SoundFXManager.instance.PlaySoundFXClip(puzzleSolved, transform, 1f);
         }
         else if (starfish1 == true && starfish2 == true)
         {
             DisbaleButtonsWithTag("StarFish");
             allCardsMatched++;
+            SoundFXManager.instance.PlaySoundFXClip(puzzleSolved, transform, 1f);
         }
         else if (otter1 == true && otter2 == true)
         {
             DisbaleButtonsWithTag("Otter");
             allCardsMatched++;
+            SoundFXManager.instance.PlaySoundFXClip(puzzleSolved, transform, 1f);
         }
         else if (elephant1 == true && elephant2 == true)
         {
             DisbaleButtonsWithTag("Elephant");
             allCardsMatched++;
+            SoundFXManager.instance.PlaySoundFXClip(puzzleSolved, transform, 1f);
         }
         else if (crab1 == true && crab2 == true)
         {
             DisbaleButtonsWithTag("Crab");
             allCardsMatched++;
+            SoundFXManager.instance.PlaySoundFXClip(puzzleSolved, transform, 1f);
         }
         else if (chicken1 == true && chicken2 == true)
         {
             DisbaleButtonsWithTag("Chicken");
             allCardsMatched++;
+            SoundFXManager.instance.PlaySoundFXClip(puzzleSolved, transform, 1f);
         }
         else
         {
@@ -90,6 +97,7 @@ public class MemoryPuzzleManager : BaseItems
             Debug.Log("You got a match");
             OnInteractEnd();
             OnPuzzleSolved.Invoke();
+            SoundFXManager.instance.PlaySoundFXClip(puzzleSolved, transform, 1f);
         }
     }
 

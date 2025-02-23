@@ -13,12 +13,7 @@ public class PlayerMovement : MonoBehaviour
     private Vector3 velocity; // Stores gravity effect
     private bool isGrounded;
 
-    AudioManager audioManager;
-
-    private void Awake()
-        {
-           //audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
-        }
+    //[SerializeField] private AudioClip[] metalFootSteps;
 
     void Start()
     {
@@ -46,6 +41,7 @@ public class PlayerMovement : MonoBehaviour
         if (direction.magnitude > 0.1f)
         {
             animator.SetBool("IsWalking", true);
+            //SoundFXManager.instance.PlayRandomSoundFXClip(metalFootSteps, transform, 1f);
             Vector3 moveDirection = cameraTransform.forward * vertical + cameraTransform.right * horizontal;
             moveDirection.y = 0f;
             moveDirection.Normalize();
@@ -59,5 +55,6 @@ public class PlayerMovement : MonoBehaviour
 
         velocity.y += gravity * Time.deltaTime;
         controller.Move(velocity * Time.deltaTime);
+        
     }
 }

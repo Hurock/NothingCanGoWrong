@@ -5,6 +5,7 @@ using UnityEngine.Events;
 
 public class Button : MonoBehaviour
 {
+    [SerializeField] private AudioClip buttonPress;
     public int keypadNumber = 1;
 
     public UnityEvent KeypadClicked;
@@ -13,5 +14,6 @@ public class Button : MonoBehaviour
     {
         Debug.Log("Clicked");
         KeypadClicked.Invoke();
+        SoundFXManager.instance.PlaySoundFXClip(buttonPress, transform, 1f);
     }
 }

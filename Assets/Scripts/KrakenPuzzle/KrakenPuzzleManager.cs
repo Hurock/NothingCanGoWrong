@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class KrakenPuzzleManager : BaseItems
 {
+    [SerializeField] private AudioClip puzzleSolved;
     [SerializeField] private List<Transform> tentacleSockets;
     [SerializeField] private GameObject tentaclePrefab;
 
@@ -52,7 +53,7 @@ public class KrakenPuzzleManager : BaseItems
         if (isInteractable)
         {
             base.OnInteractBegin();
-
+          
             if (playerInventory != null)
             {
                 List<string> temp = playerInventory.GetKeyItems();
@@ -125,6 +126,7 @@ public class KrakenPuzzleManager : BaseItems
                 temp.UncurlTentacle();
                 temp.CurlTentacle();
                 OnPuzzleSolved.Invoke();
+                SoundFXManager.instance.PlaySoundFXClip(puzzleSolved, transform, 1f);
             }
         }
         else

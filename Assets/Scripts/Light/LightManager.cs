@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class LightManager : MonoBehaviour
 {
+    
     List<LightBehaviour> lights = new();
     // Start is called before the first frame update
     void Start()

@@ -14,6 +14,7 @@ public class LightBehaviour : MonoBehaviour
     Light lightComp;
 
     [SerializeField] float delayBetweenFlicker;
+    [SerializeField] private AudioClip alarmBeep;
     // Start is called before the first frame update
     void Start()
     {
@@ -51,6 +52,7 @@ public class LightBehaviour : MonoBehaviour
     {
         isLightOn = true;
         isLightFlickering = flickering;
+        SoundFXManager.instance.PlaySoundFXClip(alarmBeep, transform, 1f);
     }    
     public void ChangeColorToWhite()
     {

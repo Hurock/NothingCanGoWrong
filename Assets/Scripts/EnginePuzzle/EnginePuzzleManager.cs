@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class EnginePuzzleManager : BaseItems
 {
-
+[SerializeField] private AudioClip steamLeak;
     bool isInteractable = false;
 
     [SerializeField] List<Valve> valves = new();
@@ -67,6 +67,7 @@ public class EnginePuzzleManager : BaseItems
                     DisableValves();
                     Debug.Log("Engine fixed!");
                     OnPuzzleSolved.Invoke();
+                    SoundFXManager.instance.PlaySoundFXClip(steamLeak, transform, 1f);
                 }
             }
             else

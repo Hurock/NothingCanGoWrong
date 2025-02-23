@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Tentacle : BaseItems
 {
+[SerializeField] private AudioClip ocotopusSound;
     static int tentacleID = 0;
 
     private int passwordValue;
@@ -49,6 +50,7 @@ public class Tentacle : BaseItems
             base.OnInteractBegin();
             CurlTentacle();
             krakenPuzzleManager.AddToPassword(passwordValue.ToString());
+            SoundFXManager.instance.PlaySoundFXClip(ocotopusSound, transform, 1f);
         }
     }
     public override void OnInteractEnd()
@@ -63,6 +65,7 @@ public class Tentacle : BaseItems
     {
         isSelected = true;
         anim.SetBool("IsSelected", true);
+        
     }
 
     public void UncurlTentacle()

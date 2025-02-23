@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PadPuzzle : BaseItems
 {
+    [SerializeField] private AudioClip puzzleSolved;
     private BoxCollider col;
 
     public string password = "1234";
@@ -65,6 +66,7 @@ public class PadPuzzle : BaseItems
                 Debug.Log("Password correct");
                 OnInteractEnd();
                 OnPuzzleSolved.Invoke();
+                SoundFXManager.instance.PlaySoundFXClip(puzzleSolved, transform, 1f);
             }
             else
             {

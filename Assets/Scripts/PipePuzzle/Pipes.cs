@@ -5,6 +5,7 @@ using UnityEngine.Events;
 
 public class Pipes : MonoBehaviour
 {
+    [SerializeField] private AudioClip[] blockSounds;
     public UnityEvent PipeClicked;
     private Vector3 newAngle;
 
@@ -20,5 +21,6 @@ public class Pipes : MonoBehaviour
         transform.localEulerAngles = newAngle;
         Debug.Log(transform.localEulerAngles.x);
         PipeClicked.Invoke();
+        SoundFXManager.instance.PlayRandomSoundFXClip(blockSounds, transform, 1f);
     }
 }
